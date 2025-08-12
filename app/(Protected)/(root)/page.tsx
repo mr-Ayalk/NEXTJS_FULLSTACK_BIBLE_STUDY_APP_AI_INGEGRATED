@@ -14,13 +14,13 @@ const statusbord = [
     icon: Flame,
     statusnum: 7,
     note: "Study Streak",
-    bgcolor: "bg-orange-500",
+    bgcolor: "bg-orange-300",
   },
   {
     icon: Target,
     statusnum: 4,
     note: "Completed Plans",
-    bgcolor: "bg-lime-300",
+    bgcolor: "bg-amber-200",
   },
   {
     icon: Users,
@@ -37,9 +37,12 @@ const Dashboard = async () => {
   return (
     <div className="md:p-2 lg:p-4 w-full  ">
       <div className="flex flex-row w-full gap-3 ">
-        <div className="w-[45%] bg-amber-200 rounded-2xl p-3 mb-4 shadow-2xl">
-          <h1 className="text-2xl md:text-2xl 2xl:text-4xl font-semibold py-2 text-center">
-            Welcome Again 👋, {user?.firstName} {user?.lastName}
+        <div className="w-[45%] bg-gradient-to-r from-lime-300 to-lime-50 rounded-2xl p-3 mb-4 shadow-2xl">
+          <h1 className="text-2xl md:text-2xl 2xl:text-4xl font-semibold py-2 ">
+            Welcome,
+            <span className="italic font-light ">
+              {user?.firstName} {user?.lastName?.charAt(0)}.
+            </span>
           </h1>
           <p className="md:text-xl text-[#2B2B2B] py-5 ">
             "Do your best to present yourself to God as one approved, a worker

@@ -14,7 +14,7 @@ const ProtectedLayout = async ({ children }: { children: React.ReactNode }) => {
       <div className="w-[80%] md:w-[85%] lg:w-[85%] xl:w-[85%] flex flex-col ">
         <Navbar />
 
-        <div className="h-full w-full p-2 overflow-y-scroll bg-black/25  opacity-100">
+        <div className="h-full w-full p-2 overflow-y-scroll bg-white opacity-100">
           {children}
         </div>
       </div>

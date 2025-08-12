@@ -12,6 +12,8 @@ import {
   LucideIcon,
   NotebookIcon,
   Settings,
+  Target,
+  TargetIcon,
   Trophy,
   Users2Icon,
   UsersIcon,
@@ -37,7 +39,7 @@ export const Sidebar = () => {
         },
         {
           name: "Study Plan & Topics",
-          href: "/",
+          href: "/plan",
           icon: NotebookIcon,
         },
         // {
@@ -47,12 +49,12 @@ export const Sidebar = () => {
         // },
         {
           name: "Community",
-          href: "/",
+          href: "/community",
           icon: UsersIcon,
         },
         {
           name: "Achivements",
-          href: "/",
+          href: "/achievement",
           icon: Trophy,
         },
       ],
@@ -62,18 +64,18 @@ export const Sidebar = () => {
       links: [
         {
           name: "Quizzes & Challenges",
-          href: "/",
-          icon: HelpCircle,
+          href: "/quiz",
+          icon: TargetIcon,
         },
         {
           name: "Reference Books",
-          href: "/record/doctors",
+          href: "/references",
 
           icon: BookAIcon,
         },
         {
           name: "Group Bible Study",
-          href: "/",
+          href: "/groupStudy",
 
           icon: Users2Icon,
         },
@@ -84,19 +86,19 @@ export const Sidebar = () => {
       links: [
         {
           name: "Help & References",
-          href: "/",
+          href: "/support",
           icon: HelpCircleIcon,
         },
 
         {
           name: "Settings",
-          href: "/admin/system-settings",
-          access: ["admin"],
+          href: "/setting",
+
           icon: Settings,
         },
         {
           name: "Premium Tools",
-          href: "/",
+          href: "/premium",
 
           icon: Crown,
         },
@@ -105,7 +107,7 @@ export const Sidebar = () => {
   ];
 
   return (
-    <div className="w-full P-4  flex flex-col justify-between gap-4 bg-white overflow-hidden min-h-full relative">
+    <div className="w-full P-4  flex flex-col justify-between gap-4 bg-white overflow-hidden min-h-full relative border-r-2 border-black/15">
       <div>
         <div className="flex items-center justify-center lg:justify-start gap-2 pl-1 ">
           <Link

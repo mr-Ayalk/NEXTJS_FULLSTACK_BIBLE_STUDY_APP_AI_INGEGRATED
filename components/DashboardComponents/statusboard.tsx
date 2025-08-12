@@ -16,12 +16,7 @@ const StatusBoard = ({
   className,
 }: StatusProps) => {
   return (
-    <div
-      className={cn(
-        "w-[24%] bg-white shadow-2xl p-7 mr-4 rounded-xl",
-        className
-      )}
-    >
+    <div className={cn("w-[24%]  shadow-2xl p-7 mr-4 rounded-xl", className)}>
       <div className="flex flex-row gap-3">
         <div className=" items-center ">
           <Icon size={34} />
