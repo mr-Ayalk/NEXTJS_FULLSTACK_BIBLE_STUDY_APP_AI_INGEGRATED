@@ -4,7 +4,7 @@ import { Bell } from "lucide-react";
 import { useAuth, UserButton } from "@clerk/nextjs";
 const Navbar = () => {
   return (
-    <div className="p-5 bg-[#fff8e7]  flex justify-between ">
+    <div className="p-5 bg-white  flex justify-between ">
       <h1 className="text-xl font-medium text-gray-500 capitalize">
         {"Overview"}
       </h1>

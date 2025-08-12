@@ -12,7 +12,7 @@ export const LogoutButton = () => {
     <Button
       variant={"outline"}
       className="w-fit bottom-3 left-10 absolute gap-2 px-0 md:px-4 "
-      onClick={() => signOut({ redirectUrl: "/" })}
+      onClick={() => signOut({ redirectUrl: "/sign-in" })}
     >
       <LogOut />
       <span className="hidden lg:block text-emerald-800">Logout</span>

@@ -10,10 +10,8 @@ import {
   HelpCircleIcon,
   HomeIcon,
   LucideIcon,
-  MessageCircleIcon,
   NotebookIcon,
   Settings,
-  SquareActivity,
   Trophy,
   Users2Icon,
   UsersIcon,
@@ -42,11 +40,11 @@ export const Sidebar = () => {
           href: "/",
           icon: NotebookIcon,
         },
-        {
-          name: "Ask the Bible(AI Chat)",
-          href: "/",
-          icon: MessageCircleIcon,
-        },
+        // {
+        //   name: "Ask the Bible(AI Chat)",
+        //   href: "/",
+        //   icon: MessageCircleIcon,
+        // },
         {
           name: "Community",
           href: "/",
@@ -107,7 +105,7 @@ export const Sidebar = () => {
   ];
 
   return (
-    <div className="w-full P-4  flex flex-col justify-between gap-4 bg-[#FFF8E7] overflow-hidden min-h-full relative">
+    <div className="w-full P-4  flex flex-col justify-between gap-4 bg-white overflow-hidden min-h-full relative">
       <div>
         <div className="flex items-center justify-center lg:justify-start gap-2 pl-1 ">
           <Link
