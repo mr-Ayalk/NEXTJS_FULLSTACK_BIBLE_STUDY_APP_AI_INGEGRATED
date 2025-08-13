@@ -18,7 +18,7 @@ const Navbar = () => {
       <div className="flex items-center gap-6  ">
         <SunIcon
           size={32}
-          className="items-center  rounded-full bg-amber-200 p-1"
+          className="items-center cursor-pointer  rounded-full bg-amber-200 p-1"
         />
         <Link href="/notifications">
           <div className="relative cursor-pointer">

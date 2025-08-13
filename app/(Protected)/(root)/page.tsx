@@ -3,6 +3,8 @@ import StatusBoard from "@/components/DashboardComponents/statusboard";
 import { redirect } from "next/navigation";
 import { currentUser } from "@clerk/nextjs/server";
 import { BookOpen, Flame, Target, Users, Users2 } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import YourJournal from "@/components/DashboardComponents/yourJournal";
 const statusbord = [
   {
     icon: BookOpen,
@@ -37,14 +39,14 @@ const Dashboard = async () => {
   return (
     <div className="md:p-2 lg:p-4 w-full  ">
       <div className="flex flex-row w-full gap-3  ">
-        <div className="w-[45%] bg-gradient-to-l from-purple-400 to-pink-400 text-neutral-500 font-semibold rounded-2xl p-3 mb-4 shadow-2xl relative ">
+        <div className="w-[45%] bg-gradient-to-l from-purple-300 to-pink-300 text-neutral-500 font-semibold rounded-2xl p-3 mb-4 shadow-2xl relative ">
           <h1 className="text-2xl md:text-2xl 2xl:text-4xl font-semibold py-2 text-black">
             Welcome,{" "}
             <span className="italic font-bold text-emerald-700  ">
               {user?.firstName} {user?.lastName?.charAt(0)}.
             </span>
           </h1>
-          <p className="md:text-xl text-[#2B2B2B] py-5 ">
+          <p className="md:text-xl text-gray-900  py-5 font-extrabold ">
             "Do your best to present yourself to God as one approved, a worker
             who has no need to be ashamed, rightly handling the word of truth."
           </p>
@@ -52,6 +54,9 @@ const Dashboard = async () => {
           <span className="text-emerald-800 font-bold">
             2 Timothy 2:15 (ESV)
           </span>
+          <Button className="absolute bottom-6 left-[13px] bg-green-400 text-black font-bold ">
+            Continue Reading
+          </Button>
           <p className="text-base text-white/75 absolute bottom-6 right-6">
             Daily Verse for you{" "}
           </p>
@@ -72,37 +77,7 @@ const Dashboard = async () => {
           />
         ))}
       </div>
-
-      <div className="flex flex-row w-full gap-3  mt-20 ">
-        <div className="w-[45%] bg-white rounded-2xl p-3 mb-4 shadow-2xl ">
-          <h1 className="text-2xl md:text-2xl 2xl:text-4xl font-semibold py-2 text-center">
-            Welcome Again 👋, {user?.firstName} {user?.lastName}
-          </h1>
-          <p className="md:text-xl text-[#2B2B2B] py-5 ">
-            "Do your best to present yourself to God as one approved, a worker
-            who has no need to be ashamed, rightly handling the word of truth."
-          </p>
-
-          <span className="text-emerald-800 font-bold">
-            2 Timothy 2:15 (ESV)
-          </span>
-        </div>
-        <div className="w-[53%] mb-4">
-          <StatusBarChart />
-        </div>
-      </div>
-
-      <div className="flex flex-col md:flex-row   ">
-        {statusbord.map((item) => (
-          <StatusBoard
-            key={item.note}
-            icon={item.icon}
-            statusNum={item.statusnum}
-            statusNote={item.note}
-            className={item.bgcolor}
-          />
-        ))}
-      </div>
+      <YourJournal />
     </div>
   );
 };
