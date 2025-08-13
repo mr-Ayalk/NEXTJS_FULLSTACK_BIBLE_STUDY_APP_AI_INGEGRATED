@@ -14,13 +14,13 @@ const statusbord = [
     icon: Flame,
     statusnum: 7,
     note: "Study Streak",
-    bgcolor: "bg-orange-300",
+    bgcolor: "bg-amber-500",
   },
   {
     icon: Target,
     statusnum: 4,
     note: "Completed Plans",
-    bgcolor: "bg-amber-200",
+    bgcolor: "bg-lime-400",
   },
   {
     icon: Users,
@@ -36,11 +36,11 @@ const Dashboard = async () => {
   }
   return (
     <div className="md:p-2 lg:p-4 w-full  ">
-      <div className="flex flex-row w-full gap-3 ">
-        <div className="w-[45%] bg-gradient-to-r from-lime-300 to-lime-50 rounded-2xl p-3 mb-4 shadow-2xl">
-          <h1 className="text-2xl md:text-2xl 2xl:text-4xl font-semibold py-2 ">
-            Welcome,
-            <span className="italic font-light ">
+      <div className="flex flex-row w-full gap-3  ">
+        <div className="w-[45%] bg-gradient-to-l from-purple-400 to-pink-400 text-neutral-500 font-semibold rounded-2xl p-3 mb-4 shadow-2xl relative ">
+          <h1 className="text-2xl md:text-2xl 2xl:text-4xl font-semibold py-2 text-black">
+            Welcome,{" "}
+            <span className="italic font-bold text-emerald-700  ">
               {user?.firstName} {user?.lastName?.charAt(0)}.
             </span>
           </h1>
@@ -52,6 +52,9 @@ const Dashboard = async () => {
           <span className="text-emerald-800 font-bold">
             2 Timothy 2:15 (ESV)
           </span>
+          <p className="text-base text-white/75 absolute bottom-6 right-6">
+            Daily Verse for you{" "}
+          </p>
         </div>
         <div className="w-[53%] mb-4">
           <StatusBarChart />

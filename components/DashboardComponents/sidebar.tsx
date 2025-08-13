@@ -10,6 +10,7 @@ import {
   HelpCircleIcon,
   HomeIcon,
   LucideIcon,
+  MessageCircleIcon,
   NotebookIcon,
   Settings,
   Target,
@@ -19,6 +20,7 @@ import {
   UsersIcon,
 } from "lucide-react";
 import { LogoutButton } from "./logout-button";
+import { SidebarItem } from "./sidebar-item";
 
 const SidebarIcon = ({ icon: Icon }: { icon: LucideIcon }) => {
   const pathname = usePathname();
@@ -42,11 +44,11 @@ export const Sidebar = () => {
           href: "/plan",
           icon: NotebookIcon,
         },
-        // {
-        //   name: "Ask the Bible(AI Chat)",
-        //   href: "/",
-        //   icon: MessageCircleIcon,
-        // },
+        {
+          name: "AI Bible Chat",
+          href: "/studyii",
+          icon: MessageCircleIcon,
+        },
         {
           name: "Community",
           href: "/community",
@@ -63,7 +65,7 @@ export const Sidebar = () => {
       label: "Study Tools",
       links: [
         {
-          name: "Quizzes & Challenges",
+          name: "Quizzes",
           href: "/quiz",
           icon: TargetIcon,
         },
@@ -121,28 +123,34 @@ export const Sidebar = () => {
 
         <div className="mt-4 text-sm pl-1">
           {SIDEBAR_LINKS.map((section) => (
-            <div key={section.label} className="flex flex-col gap-2">
-              <span className="hidden uppercase lg:block text-black opacity-100 font-bold pt-2 ">
+            <div key={section.label} className="flex flex-col ">
+              <span className="hidden uppercase lg:block text-black opacity-100 font-bold py-2 ">
                 {section.label}
               </span>
 
               {section.links.map((link) => {
                 return (
-                  <Link
-                    key={link.name}
+                  // <Link
+                  //   key={link.name}
+                  //   href={link.href}
+                  //   className={cn(
+                  //     "flex items-center gap-x-2 text-[#2B2B2B] text-sm font-[500] pl-4 transition-all hover:text-slate-600 hover:bg-slate-300/20"
+                  //   )}
+                  // >
+                  //   <SidebarIcon icon={link.icon} />
+                  //   <span className="hidden lg:block">{link.name}</span>
+                  //   <div
+                  //     className={cn(
+                  //       " ml-auto opacity-0 border-2 border-sky-700 h-[30px] transition-all"
+                  //     )}
+                  //   ></div>
+                  // </Link>
+                  <SidebarItem
+                    key={link.href}
+                    icon={link.icon}
+                    label={link.name}
                     href={link.href}
-                    className={cn(
-                      "flex items-center gap-x-2 text-[#2B2B2B] text-sm font-[500] pl-4 transition-all hover:text-slate-600 hover:bg-slate-300/20"
-                    )}
-                  >
-                    <SidebarIcon icon={link.icon} />
-                    <span className="hidden lg:block">{link.name}</span>
-                    <div
-                      className={cn(
-                        " ml-auto opacity-0 border-2 border-sky-700 h-[30px] transition-all"
-                      )}
-                    ></div>
-                  </Link>
+                  />
                 );
               })}
             </div>
